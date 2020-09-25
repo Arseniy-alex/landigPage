@@ -1,7 +1,7 @@
 :root {
-    --dark-color: rgb(8, 71, 29);
-    --medium-color: rgb(82,185,117);
-    --light-color: rgb(121,212,151);
+    --dark-color: rgba(20, 8, 71, 0.787);
+    --medium-color: rgba(82, 109, 185, 0.5);
+    --light-color: rgba(135, 140, 172, 0.616);
 }
 
 * {
@@ -20,9 +20,79 @@ body {
 
 .header {
     height: 95vh;
-    background-image: linear-gradient(to right bottom, var(--light-color), var(--medium-color), url('../img/concert.jpg'));
-    background-size: cover;
+    background-image: linear-gradient(to right bottom, var(--light-color), var(--medium-color)), url('../img/concert.jpg');
+    background-size: cover;s
     background-position: top;
     clip-path: polygon(0 0, 100% 0%, 100% 64%, 0% 100%);
 }
- 
+
+.logo-box {
+    position: absolute;
+    top: 6%;
+    left: 3%;
+}
+
+.logo {
+    height: 1.7rem;
+}
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+.heading-primary {
+    color: white;
+    text-transform: uppercase;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 5rem;
+    letter-spacing: 1.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.heading-primary-sub {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 0.6rem;
+    animation-name: moveInRight;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-10px);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
